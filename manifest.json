@@ -1,0 +1,44 @@
+{
+  "name": "crx-translator",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "This is a translator for Chrome Extension",
+  "icons": {
+    "128": "img/lufei-128.png"
+  },
+  "background": {
+    "persistent": false,
+    "scripts": [
+      "js/background.js"
+    ]
+  },
+  "browser_action": {
+    "default_title": "crx translator",
+    "default_icon": "img/lufei-128.png",
+    "default_popup": "index.html"
+  },
+  // crx请求权限
+  "permissions": [
+    "tabs",
+    "background",
+    "http://*/*",
+    "https://*/*"
+  ],
+  // 注入页面的代码
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "css": [
+        "css/contentstyle.css"
+      ],
+      "js": [
+        "js/lib/jquery.slim.min.js",
+        "js/lib/md5.js",
+        "js/contentscript.js"
+      ],
+      "run_at": "document_end"
+    }
+  ]
+}

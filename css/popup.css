@@ -1,0 +1,20 @@
+/* popup styles */
+
+body {
+    width: 200px;
+}
+.container-popup {
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.container-popup > ul {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+.container-popup > ul > li {
+    list-style: none;
+}
